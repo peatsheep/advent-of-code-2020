@@ -3,9 +3,10 @@ import * as fs from "fs";
 // Brute forcing it today bb with a little Nightmare Before Christmas charm
 
 const oogieBoogie = (() => {
-  const data: string = fs.readFileSync("input.txt").toString();
-
-  const numbers: number[] = data.split(/\r?\n/).map((line) => Number(line));
+  const numbers: number[] = fs
+    .readFileSync("input.txt", "utf-8")
+    .split("\n")
+    .map((line) => Number(line));
 
   for (let i = 0; i < numbers.length; i += 1) {
     const lock = numbers[i];
