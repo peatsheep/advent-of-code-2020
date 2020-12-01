@@ -5,11 +5,7 @@ import * as fs from "fs";
 const oogieBoogie = (() => {
   const data: string = fs.readFileSync("input.txt").toString();
 
-  const lines: string[] = data.split(/\r?\n/);
-
-  const numbers: number[] = lines.map((line) => Number(line));
-
-  let result: number | null = null;
+  const numbers: number[] = data.split(/\r?\n/).map((line) => Number(line));
 
   for (let i = 0; i < numbers.length; i += 1) {
     const lock = numbers[i];
